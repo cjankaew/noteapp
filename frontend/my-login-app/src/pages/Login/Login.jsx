@@ -1,6 +1,16 @@
+import React from 'react';
+import Navbar from '../../components/Navbar/Navbar';
+
 const Login = () => {
   return (
-    <div>Login</div>
+    <>
+      <Navbar />
+      <div>
+        <div>
+          <form action=""></form>
+        </div>
+      </div>
+    </>
   )
 }
 

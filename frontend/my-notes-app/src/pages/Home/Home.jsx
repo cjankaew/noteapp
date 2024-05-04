@@ -6,8 +6,7 @@ import { useState } from "react";
 import Modal from "react-modal";
 
 const Home = () => {
-
-  const [ openAddEditModal, setOpenAddEditModal ] = useState({
+  const [openAddEditModal, setOpenAddEditModal] = useState({
     isShow: false,
     type: "add",
     data: null,
@@ -31,8 +30,8 @@ const Home = () => {
           />
         </div>
       </div>
-      <button 
-        className="w-16 h-16 flex items-center justify-center rounded-2xl bg-primary hover:bg-blue-600 absolute right-10 bottom-10" 
+      <button
+        className="w-16 h-16 flex items-center justify-center rounded-2xl bg-primary hover:bg-blue-600 absolute right-10 bottom-10"
         onClick={() => {
           setOpenAddEditModal({ isShow: true, type: "add", data: null });
         }}
@@ -51,10 +50,14 @@ const Home = () => {
         contentLabel=""
         className="w-[40%] max-h-3/4 bg-white rounded-md mx-auto mt-14 p-5 overflow-scroll"
       >
-        <AddEditNotes />
+        <AddEditNotes
+          type={openAddEditModal.type}
+          noteData={openAddEditModal.data}
+          onClose={() => {
+            setOpenAddEditModal({ isShow: false, type: "add", data: null });
+          }}
+        />
       </Modal>
-
-      
     </>
   );
 };

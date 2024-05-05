@@ -24,3 +24,6 @@ dist-ssr
 
 # dotenv environment variables file
 .env
+
+# config.json should not add on git respository
+config.json
